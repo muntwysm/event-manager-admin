@@ -1,0 +1,33 @@
+<h1>New contribution</h1>
+
+<p>
+  <b>Event:</b>
+  <%= @event.name %><br />
+	<%= @event.date %><br />
+	<%= @event.location.name %>
+</p>
+
+<% form_for(@contribution) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :item_id %><br />
+		<%= f.collection_select(:item_id, Item.find(:all), :id, :name_with_unit, :include_blank => true) %>
+  </p>
+  <p>
+    <%= f.label :qty %><br />
+    <%= f.text_field :qty %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :email_confirmation %><br />
+    <%= f.text_field :email_confirmation %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', contributions_path %>

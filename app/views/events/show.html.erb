@@ -1,0 +1,49 @@
+<p>
+  <b>Name:</b>
+  <%=h @event.name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @event.location.name %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @event.date %>
+</p>
+
+<% if current_user %>
+	<%= link_to 'Edit Event or Requirements', edit_event_path(@event) %>
+<% end %>
+
+<br /><br />
+
+<% if @requirements.count > 0 %>
+	<p><b>Requirements:</b></p>
+
+	<table>
+		<tr>
+		  <th>Item</th>
+		  <th>Units</th>
+		  <th>Still Need</th>
+		</tr>
+
+	<% @requirements.each do |requirement| %>
+		<tr>
+		  <td><%=h requirement.item.name %></td>
+		  <td><%=h requirement.item.unit %></td>
+		  <td><%=h @event.contributions_still_required_for(requirement.item.id, @event.id) %></td>
+			<td>
+					<% if @event.contribution_less_than_required_for(requirement.item.id, @event.id) %> 
+							<%= link_to 'Make Contribution', add_contribution_url(:id => @event.id,:req_id => requirement.id) %>
+					<% else %>
+							Requirement (<%=h requirement.qty %>) met
+					<% end %>
+
+
+			</td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
