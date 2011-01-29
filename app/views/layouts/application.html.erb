@@ -18,7 +18,7 @@
 					<% if session[:user_name] %>
 						<li><%= link_to "My Contributions", individual_contributions_url(:search => session[:user_name]) %></li>
 					<% else %>
-						<li><%= link_to "Contributions", contributions %></li>
+						<li><%= link_to "Contributions", contributions_path %></li>
 					<% end %>
 					<% if current_user %>
           	<li><%= link_to "Admin", '/admin' %></li>
