@@ -1,13 +1,32 @@
-.container {
-  width: 710px;
+.container  {
+	width: 900px;
+	margin: 0 auto;
+	background-image: url('blueprint/src/background.png'); 
+	background-repeat: no-repeat;
 }
 
-body {
-  background: #cff;
+body{
+	background-image: url('blueprint/src/background-gradient.png');
+	background-repeat: repeat-x;
+	background-color: rgb(72, 143, 162);
+	margin: 0 0 10px 0;
+	padding: 0;
 }
 
 #header {
-  padding-top: 20px;
+	height: 200px;
+	position: relative;
+}
+
+#mainHeader {
+	position: relative;
+	margin: 0;
+	padding-top:2em;
+	color: #fff;
+}
+
+#mainHeader h1{
+	color: #fff;
 }
 
 #header img {
@@ -16,7 +35,7 @@ body {
 }
 
 #content {
-  margin-top: 1em;
+  margin: 0;
   font-size: 120%;
   padding: 20px;
   background: #fff;
@@ -93,7 +112,7 @@ ul.navigation {
   float: none;
 }
 
-/* Errors background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4; */
+/* Errors */
 .fieldWithErrors {
   padding: 2px;
   background-color: #fbc2c4;
@@ -134,4 +153,15 @@ ul.navigation {
   font-size: 12px;
   list-style: square;
 }
+
+/* ===== miscellaneous styles ===== */
+
+.clear {
+    clear: both;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
 

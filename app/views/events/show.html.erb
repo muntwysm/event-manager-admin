@@ -33,7 +33,11 @@
 		<tr>
 		  <td><%=h requirement.item.name %></td>
 		  <td><%=h requirement.item.unit %></td>
-		  <td><%=h @event.contributions_still_required_for(requirement.item.id, @event.id) %></td>
+		  <td><%=h @event.contributions_still_required_for(requirement.item.id, @event.id) %>
+			<% if current_user %>
+				of <%=h requirement.qty %>
+			<% end %>			
+			</td>
 			<td>
 					<% if @event.contribution_less_than_required_for(requirement.item.id, @event.id) %> 
 							<%= link_to 'Make Contribution', add_contribution_url(:id => @event.id,:req_id => requirement.id) %>

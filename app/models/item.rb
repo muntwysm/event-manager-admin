@@ -1,7 +1,7 @@
 class Item < ActiveRecord::Base
 	belongs_to :category
-	has_many :requirements
-	has_many :contributions
+	has_many :requirements, :dependent => :destroy
+	has_many :contributions, :dependent => :destroy
 	has_many :events, :through => :requirements
 	has_many :events, :through => :contributions
 

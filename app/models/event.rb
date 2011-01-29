@@ -1,10 +1,10 @@
 class Event < ActiveRecord::Base
 	belongs_to :location
-	has_many :requirements
+	has_many :requirements, :dependent => :destroy
 	has_many :items, :through => :requirements
 	accepts_nested_attributes_for :requirements, :allow_destroy => true
 
-	has_many :contributions
+	has_many :contributions, :dependent => :destroy
 	has_many :items, :through => :contributions
 	accepts_nested_attributes_for :contributions, :allow_destroy => true
 
