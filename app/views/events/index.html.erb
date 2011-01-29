@@ -14,7 +14,9 @@
     <td><%=h event.date("%a %B %d, %Y %H:%M") %></td>
     <td><%= link_to 'View', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% if current_user %>
+				<td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
   </tr>
 <% end %>
 </table>
