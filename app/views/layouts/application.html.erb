@@ -15,7 +15,11 @@
         <ul class="navigation round">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Events", events_path %></li>
-					<li><%= link_to "My Contributions", individual_contributions_url(:search => session[:user_name]) if session[:user_name] %></li>
+					<% if session[:user_name] %>
+						<li><%= link_to "My Contributions", individual_contributions_url(:search => session[:user_name]) %></li>
+					<% else %>
+						<li><%= link_to "Contributions", contributions %></li>
+					<% end %>
 					<% if current_user %>
           	<li><%= link_to "Admin", '/admin' %></li>
 						<li><%= link_to "Logout", logout_path %></li>

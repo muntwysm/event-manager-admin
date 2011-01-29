@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
 
-  map.resources :users, :only => [:edit, :udpate]
+  map.resources :users
 
   map.resources :contributions
 

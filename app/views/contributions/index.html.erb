@@ -1,4 +1,4 @@
-<h1>Listing contributions</h1>
+<h1>Event contributions</h1>
 
 <% form_tag contributions_path, :method => 'get' do %>
   <p>
@@ -21,7 +21,7 @@
 	<% @contributions.each do |contribution| %>
 		<tr>
 		  <td><%=h short_version_of contribution.created_at %></td>
-		  <td><%= link_to contribution.email, individual_contributions_url(:search => contribution.email) %></td>
+		  <td><%= link_to truncate(contribution.email,22), individual_contributions_url(:search => contribution.email) %></td>
 		  <td><%=h contribution.event.name %></td>
 		  <td><%=h contribution.item.name %></td>
 		  <td><%=h contribution.qty %></td>

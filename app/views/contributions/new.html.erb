@@ -1,39 +1,38 @@
 <h1>New contribution</h1>
 
-<p>
-  <b>Event:</b>
-  <%= @event.name %><br />
-	<%= short_date_time @event.date %><br />
-	<%= @event.location.name %>
-</p>
+<h3><%=h @event.name %><br />
+		<%=h short_date_time @event.date %><br />
+		<%=h @event.location.name %>
+</h3>
 
 <% form_for(@contribution) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :item_id %>
+    <%= f.label :item_id %>:
 		<%= @contribution.item.name_with_unit %>
 	</p>
 	<p>		
-	<b>"<%= @contribution.item.unit %>" required</b>
+	<b>"<%= @contribution.item.unit %>" required:</b>
 		<%=h @event.contributions_still_required_for(@contribution.item.id, @event.id) %>
 	</p>
-	<p>
-		<b>Your contribution</b>
+	<div>
+		<h6>Your contribution:</h6>
 		<%  max_qty = @event.contributions_still_required_for(@contribution.item.id, @event.id)
 				nums = (1..max_qty).to_a
 				quantities = nums.collect{ |n| [n.to_s, n.to_s] }
 				
  		%>
 		<%= f.select(:qty, quantities, :include_blank => true) %>
-	</p>
+	</div>
 
-	<p>
-    <%= f.label :email, "Your Name" %>
+	<div>
+    <%= f.label :email, "Your Name" %>:<br />
     <%= f.text_field :email, "max" => 18 %>
 		<small>Examples: Jones Family. Mrs Williams.</small>
-  </p>
+  </div>
     <%= f.hidden_field :event_id %>
     <%= f.hidden_field :item_id %>
+	<br />
   <p>
     <%= f.submit 'Save' %>
   </p>

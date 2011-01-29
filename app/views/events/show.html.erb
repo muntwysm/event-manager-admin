@@ -1,26 +1,15 @@
-<p>
-  <b>Name:</b>
-  <%=h @event.name %>
-</p>
+<h1><%=h @event.name %></h1>
 
-<p>
-  <b>Location:</b>
-  <%=h @event.location.name %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%=h short_date_time @event.date %>
-</p>
+<h3><%=h @event.location.name %>. 
+		<%=h short_date_time @event.date %>
+</h3>
 
 <% if current_user %>
-	<%= link_to 'Edit Event or Requirements', edit_event_path(@event) %>
+	<%=h link_to 'Edit Event or Requirements', edit_event_path(@event) %>
 <% end %>
 
-<br /><br />
-
 <% if @requirements.count > 0 %>
-	<p><b>Requirements:</b></p>
+	<h2>Requirements:</h2>
 
 	<table>
 		<tr>

@@ -7,6 +7,7 @@
 		<li><%= link_to 'Manage Categories', categories_path %></li>
 		<li><%= link_to 'Manage Items', items_path %></li>
 		<li><%= link_to 'Manage Locations', locations_path %></li>
-		<li><%= link_to "Edit Admin user details", edit_user_path(:current) %></li>
+		<li><%= link_to "Edit Admin user details", edit_user_path(current_user) %></li>
+		<li><%= link_to "Create a new Admin user", new_user_path %></li>
 	</ul>
 </p>

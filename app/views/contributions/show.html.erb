@@ -1,9 +1,7 @@
-<p>
-  <b>Event:</b>
-  <%=h @contribution.event.name %><br />
-	<%=h short_date_time @contribution.event.date %><br />
-	<%=h @contribution.event.location.name %>
-</p>
+<h3><%=h @event.name %><br />
+		<%=h short_date_time @event.date %><br />
+		<%=h @event.location.name %>
+</h3>
 <p>
   <b>Item contributed:</b>
   <%=h @contribution.item.name %> (<%=h @contribution.item.unit %>)
@@ -21,4 +19,5 @@
 	<%= link_to "Contribute more to #{@contribution.event.name}", @contribution.event %> |
 <% end %>
 <%= link_to 'Edit', edit_contribution_path(@contribution) %> |
-<%= link_to 'Destroy', @contribution.id.to_s, :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to 'Destroy', @contribution.id.to_s, :confirm => 'Are you sure?', :method => :delete %> | 
+<%= link_to 'Home', root_url %>
