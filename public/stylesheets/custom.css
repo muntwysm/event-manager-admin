@@ -1,7 +1,7 @@
 .container  {
 	width: 900px;
 	margin: 0 auto;
-	background-image: url('blueprint/src/background.png'); 
+	background-image: url('blueprint/src/background2.png'); 
 	background-repeat: no-repeat;
 }
 
@@ -22,16 +22,6 @@ body{
 	position: relative;
 	margin: 0;
 	padding-top:2em;
-	color: #fff;
-}
-
-#mainHeader h1{
-	color: #fff;
-}
-
-#header img {
-  padding: 1em;
-  background: #fff;
 }
 
 #content {
@@ -64,9 +54,10 @@ a:visited {
 }
 
 .navigation {
-  background-color: white;
+  background-color: rgb(72, 143, 162);
   padding: 0 0.7em;
   white-space: nowrap;
+	color: #ffffff;
 }
 
 ul.navigation {
@@ -82,14 +73,16 @@ ul.navigation {
 .navigation li a {
   padding: 0 5px;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .navigation li a:visited {
-  color: #09c;
+  color: #ffffff;
 }
 
 .navigation li a:hover {
   text-decoration: underline;
+  color: #ffffff;
 }
 
 /* Round corners */

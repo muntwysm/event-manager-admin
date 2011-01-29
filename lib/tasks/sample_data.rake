@@ -21,40 +21,40 @@ end
 
 def make_items
   cat = Item.create!(:name => "Soft drink",
-											:unit => "Bottle(s) 1.5 Lts",
+											:unit => "Bottles 1.5 Lts",
 											:category_id => 1)
   cat = Item.create!(:name => "Juice",
-											:unit => "Bottle(s) 1.5 Lts",
+											:unit => "Bottles 1.5 Lts",
 											:category_id => 1)
   cat = Item.create!(:name => "Water - no gas",
-											:unit => "Bottle(s) 1.5 Lts",
+											:unit => "Bottles 1.5 Lts",
 											:category_id => 1)
   cat = Item.create!(:name => "Water - with gas",
-											:unit => "Bottle(s) 1.5 Lts",
+											:unit => "Bottles 1.5 Lts",
 											:category_id => 1)
   cat = Item.create!(:name => "Biscuits",
-											:unit => "Packet(s)",
+											:unit => "Packets",
 											:category_id => 2)
   cat = Item.create!(:name => "Cake",
-											:unit => "Cake(s)",
+											:unit => "Cakes",
 											:category_id => 2)
   cat = Item.create!(:name => "Bread",
 											:unit => "Loaves",
 											:category_id => 2)
   cat = Item.create!(:name => "Crisps",
-											:unit => "Packet(s)",
+											:unit => "Packets",
 											:category_id => 2)
   cat = Item.create!(:name => "Fruit",
-											:unit => "Bunch(es)",
+											:unit => "Bunches",
 											:category_id => 2)
   cat = Item.create!(:name => "Cups",
-											:unit => "Packet(s)",
+											:unit => "Packets",
 											:category_id => 3)
   cat = Item.create!(:name => "Plates",
-											:unit => "Packet(s)",
+											:unit => "Packets",
 											:category_id => 3)
   cat = Item.create!(:name => "Napkins",
-											:unit => "Packet(s)",
+											:unit => "Packets",
 											:category_id => 3)
 end
 
@@ -79,7 +79,7 @@ end
 def make_requirements
   3.times do |e|
 		12.times do |i|
-    Requirement.create!(:qty => 1 + rand(12),
+    Requirement.create!(:qty => 10 + rand(8),
                  :event_id => 1 + e,
                  :item_id => 1 + i)
 		end
@@ -88,8 +88,8 @@ end
 
 def make_contributions
   3.times do |e|
-		6.times do |i|
-    Contribution.create!(:qty => 1,
+		24.times do |i|
+    Contribution.create!(:qty => 1 + rand(4),
                  :event_id => 1 + e,
                  :item_id => 1 + rand(12),
 								 :email => "Person#{rand(12)}")

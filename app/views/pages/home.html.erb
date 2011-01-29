@@ -1,6 +1,4 @@
-<h1>Event Supplies Helper</h1>
-
-<h3>Upcoming events</h3>
+<h1>Upcoming events</h1>
 
 <table>
   <tr>
@@ -25,19 +23,19 @@
 <table>
   <tr>
     <th>Date</th>
-    <th>Event</th>
+    <th>Contributed by</th>
+    <th>For Event</th>
     <th>Item -- Unit</th>
     <th>Qty</th>
-    <th>Contributed by</th>
   </tr>
 
 <% @contributions.each do |contribution| %>
   <tr>
     <td><%=h short_version_of contribution.created_at %></td>
+		<td><%= link_to contribution.email, individual_contributions_url(:search => contribution.email) %></td>
     <td><%=h contribution.event.name %></td>
     <td><%=h contribution.item.name_with_unit %></td>
     <td><%=h contribution.qty %></td>
-		<td><%= link_to contribution.email, individual_contributions_url(:search => contribution.email) %></td>
   </tr>
 <% end %>
 </table>
