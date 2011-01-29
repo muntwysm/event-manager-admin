@@ -3,7 +3,7 @@
 <p>
   <b>Event:</b>
   <%= @event.name %><br />
-	<%= @event.date %><br />
+	<%= short_date_time @event.date %><br />
 	<%= @event.location.name %>
 </p>
 
@@ -29,13 +29,13 @@
 
 	<p>
     <%= f.label :email, "Your Name" %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, "max" => 18 %>
 		<small>Examples: Jones Family. Mrs Williams.</small>
   </p>
     <%= f.hidden_field :event_id %>
     <%= f.hidden_field :item_id %>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Save' %>
   </p>
 <% end %>
 

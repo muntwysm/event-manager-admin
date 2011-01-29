@@ -18,7 +18,7 @@ class Contribution < ActiveRecord::Base
 		if search
 		  find(:all, :conditions => ['email LIKE ?', "%#{search}%"])
 		else
-		  find(:all)
+			find(:all)
 		end
 	end
 

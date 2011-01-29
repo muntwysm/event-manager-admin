@@ -2,7 +2,8 @@ class ContributionsController < ApplicationController
   # GET /contributions
   # GET /contributions.xml
   def index
-    @contributions = Contribution.search(params[:search])
+    @results = Contribution.search(params[:search])
+		@contributions = @results.paginate :page => params[:page], :per_page => 30
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +46,6 @@ class ContributionsController < ApplicationController
     @contribution = Contribution.find(params[:id])
 		@event = @contribution.event
 		@old_qty = @contribution.qty
-		@contribution.qty = 0
 		@contribution.save
   end
 

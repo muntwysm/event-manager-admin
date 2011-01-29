@@ -14,6 +14,7 @@
 		  <th>Event</th>
 		  <th>Item</th>
 		  <th>Qty</th>
+		  <th>Date</th>
 		  <th>Contributed by</th>
 		</tr>
 
@@ -22,11 +23,15 @@
 		  <td><%=h contribution.event.name %></td>
 		  <td><%=h contribution.item.name %></td>
 		  <td><%=h contribution.qty %></td>
+		  <td><%=h short_version_of contribution.created_at %></td>
 		  <td><%= link_to contribution.email, individual_contributions_url(:search => contribution.email) %></td>
 		  <td><%= link_to 'Options', contribution %></td>
 		</tr>
 	<% end %>
 	</table>
+
+<%= will_paginate @contributions %>
+
 <% else %>
 	<p>There are no contributions found for '<%= params[:search] %>'.</p>
 <% end %>

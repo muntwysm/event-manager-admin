@@ -14,7 +14,7 @@ class Item < ActiveRecord::Base
   }
 
 	def name_with_unit
-		"#{name} --- #{unit}"
+		"#{name} -- #{unit}"
 	end
 
 end

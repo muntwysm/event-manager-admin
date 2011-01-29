@@ -3,8 +3,8 @@ class PagesController < ApplicationController
 
   def home
 		@title = "Home"
-		@events = Event.all
-		@contributions = Contribution.all
+		@events = Event.all(:conditions => ["date > ?", Date.today])
+		@contributions = Contribution.paginate :page => params[:page], :per_page => 20
   end
 
   def help

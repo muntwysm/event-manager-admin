@@ -11,11 +11,11 @@
   <tr>
     <td><%=h event.name %></td>
     <td><%=h event.location.name %></td>
-    <td><%=h event.date("%a %B %d, %Y %H:%M") %></td>
-    <td><%= link_to 'View', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%=h short_date_time event.date %></td>
+    <td><%= link_to 'View Requirements', event %></td>
 		<% if current_user %>
-				<td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+			<td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
 		<% end %>
   </tr>
 <% end %>

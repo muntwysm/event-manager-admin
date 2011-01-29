@@ -22,7 +22,7 @@
   <tr>
     <td><%=h event.name %></td>
     <td><%=h event.location.name %></td>
-    <td><%=h event.date("%a %B %d, %Y %H:%M") %></td>
+    <td><%=h short_date_time event.date %></td>
     <td><%= link_to 'Requirements', event %></td>
   </tr>
 <% end %>
@@ -33,6 +33,7 @@
 
 <table>
   <tr>
+    <th>Date</th>
     <th>Event</th>
     <th>Item -- Unit</th>
     <th>Qty</th>
@@ -41,6 +42,7 @@
 
 <% @contributions.each do |contribution| %>
   <tr>
+    <td><%=h short_version_of contribution.created_at %></td>
     <td><%=h contribution.event.name %></td>
     <td><%=h contribution.item.name_with_unit %></td>
     <td><%=h contribution.qty %></td>
@@ -48,3 +50,5 @@
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate @contributions %>

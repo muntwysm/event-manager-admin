@@ -10,4 +10,12 @@ module ApplicationHelper
     end
   end
 
+	def short_version_of(date)
+		date.strftime("%e-%b")
+	end
+
+	def short_date_time(date)
+		date.strftime("%a %e-%b-%Y %H:%M")
+	end
+
 end
