@@ -8,6 +8,7 @@ namespace :db do
     make_events
 		make_requirements
 		make_contributions
+		make_admin
   end
 end
 
@@ -96,3 +97,6 @@ def make_contributions
   end
 end
 
+def make_admin
+	User.create! :username => 'admin', :email => 'mnelson@zis.ch', :password => 'foobar', :password_confirmation => 'foobar'
+end  
