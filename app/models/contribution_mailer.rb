@@ -5,5 +5,5 @@ class ContributionMailer < ActionMailer::Base
 	from "ZIS Events"
   subject "Contribution made to"
   sent_on Time.now
-	body {:url => "http://cold-window-955.heroku.com"} 
+	#body {:url => "http://cold-window-955.heroku.com"} 
 end
