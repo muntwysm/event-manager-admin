@@ -20,4 +20,5 @@
 <% end %>
 <%= link_to 'Edit', edit_contribution_path(@contribution) %> |
 <%= link_to 'Destroy', @contribution.id.to_s, :confirm => 'Are you sure?', :method => :delete %> | 
+<%= link_to 'View Event', @contribution.event %> | 
 <%= link_to 'Home', root_url %>

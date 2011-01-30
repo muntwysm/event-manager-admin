@@ -19,6 +19,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 		@title = "Event '#{@event.name}'"
 		@requirements = @event.requirements
+		@contributions_count = Contribution.find(:all, :conditions => ["event_id = ?", params[:id]]).count
+
+		if params[:search]
+			@reqs = Contribution.find(:all, :conditions => ["email LIKE ? AND event_id = ?", "%#{params[:search]}%", params[:id]], :order => "created_at")
+		else
+			@reqs = @event.requirements
+		end
 
     respond_to do |format|
       format.html # show.html.erb

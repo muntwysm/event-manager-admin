@@ -9,7 +9,7 @@
   <tr>
     <td><%=h location.name %></td>
     <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', location, :confirm => 'Are you sure? All records which use this location (Events, Items, Requirements & Contributions) will be destroyed if you continue.', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -28,7 +28,7 @@ body{
   margin: 0;
   font-size: 120%;
   padding: 20px;
-  background: #fff;
+  background: #FFF8C6;
 }
 
 /* Links */
@@ -99,6 +99,7 @@ ul.navigation {
   width: 710px;
   margin-left: auto;
   margin-right: auto;
+	color: #fff;
 }
 
 #footer .navigation {
@@ -145,6 +146,11 @@ ul.navigation {
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+#item-contributions{
+	margin-left: 50px;
+	width: 400px;
 }
 
 /* ===== miscellaneous styles ===== */

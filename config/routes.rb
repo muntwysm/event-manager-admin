@@ -5,8 +5,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :contributions
 
-  map.resources :requirements
-
   map.resources :events
 
   map.resources :locations
@@ -30,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   # This route can be invoked with purchase_url(:id => product.id)
 	map.add_contribution 'events/:id/new_contribution/:req_id', :controller => 'contributions', :action => 'new'
 	map.individual_contributions ':search/contributions', :controller => 'contributions', :action => 'index'
+	map.individual_event_contributions ':id/contributions/:search', :controller => 'events', :action => 'show'
 	map.login "login", :controller => "user_sessions", :action => "new"
 	map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
@@ -62,6 +61,6 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
+  # map.connect ':controller/:action/:id'
 	map.connect '*path', :controller => 'pages', :action => 'home'
 end
