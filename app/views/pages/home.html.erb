@@ -2,7 +2,7 @@
 make a contribution.</span></h1>
 
 <table>
-  <tr>
+  <tr class="large">
     <th>Name</th>
     <th>Location</th>
     <th>Date</th>
@@ -11,10 +11,10 @@ make a contribution.</span></h1>
 
 <% @events.each do |event| %>
   <tr>
-    <td><%=h event.name %></td>
-    <td><%=h event.location.name %></td>
-    <td><%=h short_date_time event.date %></td>
-    <td><%= link_to 'Requirements', event %></td>
+    <td class="large"><%=h event.name %></td>
+    <td class="large"><%=h event.location.name %></td>
+    <td class="large"><%=h short_date_time event.date %></td>
+    <td class="large"><%= link_to 'Requirements', event %></td>
   </tr>
 <% end %>
 </table>
