@@ -91,7 +91,7 @@ class ContributionsController < ApplicationController
     @contribution.destroy
 
     respond_to do |format|
-      format.html { redirect_to(contributions_url) }
+      format.html { redirect_to(@contribution.event) }
       format.xml  { head :ok }
     end
   end
