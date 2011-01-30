@@ -54,10 +54,9 @@ a:visited {
 }
 
 .navigation {
-  background-color: rgb(72, 143, 162);
+  background-color: #FFF8C6;#rgb(72, 143, 162);
   padding: 0 0.7em;
   white-space: nowrap;
-	color: #ffffff;
 }
 
 ul.navigation {
@@ -73,16 +72,16 @@ ul.navigation {
 .navigation li a {
   padding: 0 5px;
   font-weight: bold;
-  color: #ffffff;
+	color: #153E7E;
 }
 
 .navigation li a:visited {
-  color: #ffffff;
+	color: #153E7E;
 }
 
 .navigation li a:hover {
   text-decoration: underline;
-  color: #ffffff;
+	color: #153E7E;
 }
 
 /* Round corners */
