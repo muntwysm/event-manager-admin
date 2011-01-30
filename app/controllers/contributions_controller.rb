@@ -58,6 +58,8 @@ class ContributionsController < ApplicationController
 
     respond_to do |format|
       if @contribution.save
+				email = ContributionMailer.contribution_added_email(contribution) 
+
         format.html { redirect_to(@contribution, :notice => 'Contribution was successfully added.') }
         format.xml  { render :xml => @contribution, :status => :created, :location => @contribution }
       else
