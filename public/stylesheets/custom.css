@@ -1,12 +1,12 @@
 .container  {
 	width: 900px;
 	margin: 0 auto;
-	background-image: url('blueprint/src/background2.png'); 
+	background-image: url('../images/background4.png'); 
 	background-repeat: no-repeat;
 }
 
 body{
-	background-image: url('blueprint/src/background-gradient.png');
+	background-image: url('../images/background-gradient.png');
 	background-repeat: repeat-x;
 	background-color: rgb(72, 143, 162);
 	margin: 0 0 10px 0;
@@ -54,7 +54,7 @@ a:visited {
 }
 
 .navigation {
-  background-color: #FFF8C6;#rgb(72, 143, 162);
+  background-color: #ffffff;
   padding: 0 0.7em;
   white-space: nowrap;
 }
