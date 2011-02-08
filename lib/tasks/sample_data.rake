@@ -92,7 +92,8 @@ def make_contributions
     Contribution.create!(:qty => 1 + rand(4),
                  :event_id => 1 + e,
                  :item_id => 1 + rand(12),
-								 :email => "Person#{rand(12)}")
+								 :email => "Person#{rand(12)}",
+								 :authtoken => secure_hash("#{Time.now.utc}#{1+rand(1000)}"))
 		end
   end
 end
