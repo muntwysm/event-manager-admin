@@ -93,7 +93,7 @@ def make_contributions
                  :event_id => 1 + e,
                  :item_id => 1 + rand(12),
 								 :email => "Person#{rand(12)}",
-								 :authtoken => secure_hash("#{Time.now.utc}#{1+rand(1000)}"))
+								 :authtoken => 1+rand(1000000))
 		end
   end
 end
