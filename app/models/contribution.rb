@@ -2,7 +2,7 @@ class Contribution < ActiveRecord::Base
 	belongs_to :event
 	belongs_to :item
 
-	validates_presence_of :item_id, :qty, :email, :authtoken
+	validates_presence_of :item_id, :qty, :email
 
 	validates_numericality_of :qty, :only_integer => true, :message => "can only be whole number."
 
