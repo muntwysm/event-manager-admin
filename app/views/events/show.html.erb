@@ -72,15 +72,17 @@
 								<td><%=h short_version_of contribution.created_at %></td>
 								<td><%= link_to truncate(contribution.email,22), individual_event_contributions_url(:search => contribution.email,:id => params[:id]) %></td>
 								<td><%=h contribution.qty %></td>
-								<td><%= link_to 'Edit', contribution %></td>
+								<td><%= link_to 'Options', contribution %></td>
 							</tr>
 						<% end %>
 						</table>
 					<% else %>
-						<table><tr><td>There are no contributions for '<%=h requirement.item.name %>'.</td></tr></table>
+						<table id="item-contributions"><tr><td>There are no contributions for '<%=h requirement.item.name %>'.</td></tr></table>
 					<% end %>
 	</table>
 	<% end %>
 <% else %>
+	<% if @requirements.count > 0 %>
 	<p>No contributions have been made.</p>
+	<% end %>
 <% end %>

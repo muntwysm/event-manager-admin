@@ -55,16 +55,17 @@ class ContributionsController < ApplicationController
     @contribution = Contribution.new(params[:contribution])
 		@event = Event.find(@contribution.event_id)
 		session[:user_name] = @contribution.email
+		@token = Contribution.find(:all, :conditions => ['authtoken = ?', @contribution.authtoken])
 
-    respond_to do |format|
-      if @contribution.save
-        format.html { redirect_to(@contribution, :notice => 'Contribution was successfully added.') }
-        format.xml  { render :xml => @contribution, :status => :created, :location => @contribution }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @contribution.errors, :status => :unprocessable_entity }
-      end
-    end
+		if @token.count == 0
+			if @contribution.save
+		  redirect_to(@contribution, :notice => 'Contribution was successfully added.') 
+			else
+				render :action => "new"
+			end
+		else
+			redirect_to(@event, :alert => 'Form Error: Duplicate form. Use the "Make Contribution" link to make a new contribution.') 
+		end
   end
 
   # PUT /contributions/1
