@@ -19,7 +19,7 @@
 		<h6>Your contribution:</h6>
 		<%  max_qty = @event.contributions_still_required_for(@contribution.item.id, @event.id)
 				nums = (1..max_qty).to_a
-				quantities = nums.collect{ |n| [n.to_s, n.to_s] }
+				quantities = nums.collect{ |n| [n, n] }
 				
  		%>
 		<%= f.select(:qty, quantities, :include_blank => true) %>
